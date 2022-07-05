@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e333ad8f-874c-4791-af1c-1703439609ad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GentleCoffee.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.9.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Advanced spring lever.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Best overall pressure profile.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Blooming allonge.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Blooming espresso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Classic Italian espresso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Cremina.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/EspressoForge_Dark.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/EspressoForge_Light.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Flow profile for milky drinks.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Flow profile for straight espresso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Gentle and sweet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Gentle flat 2.5 ml per second.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Gentle preinfusion flow profile.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Gentler but still traditional 8.4 bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Hybrid pour over espresso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Innovative long preinfusion.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Italian Australian espresso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Londinium-R-by-Damian.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Low pressure lever machine at 6 bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Pour over.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Preinfuse then 45ml of water.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Traditional lever machine.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Trendy 6 bar low pressure shot.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/Two spring lever machine to 9 bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/adaptive_allonge.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/adaptive_espresso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/cleaning_forward_flush.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/cold_brew.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/default.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/e61 classic at 9 bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/e61 classic gently up to 10 bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/e61 rocketing up to 10 bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/e61 with fast preinfusion to 9 bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/kalita_20.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/manual_flow.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/manual_pressure.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/rao_allonge.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_chinese_green.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_japanese_green.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_no_pressure.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_oolong.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_oolong_dark.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_pressurized.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_tisane.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/tea_portafilter_white.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/test_leak.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/test_pressure_calibration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/test_pressure_release.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/test_temperature.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/test_temperature_calibration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/v60-15g.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/v60-20g.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/v60-22g.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/profiles/decent/weber_spring_clean.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/doctor/coffee/ChangeCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/doctor/coffee/Profile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/doctor/coffee/ProfileStep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/doctor/coffee/ProfileType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/doctor/coffee/decent/DecentProfile.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2BXX2LbWVmWr1kd0y4CkYcrxwCq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/mimoja/Projects/GentleCoffee/res/profiles/decent",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="doctor.coffee" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/profiles/decent" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="GentleCoffee" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e333ad8f-874c-4791-af1c-1703439609ad" name="Changes" comment="" />
+      <created>1657053196240</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657053196240</updated>
+      <workItem from="1657053197510" duration="5278000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

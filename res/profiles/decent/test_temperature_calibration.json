@@ -1,0 +1,57 @@
+{
+  "title": "Test\/temperature calibration",
+  "author": "Decent",
+  "notes": "Make a device to read ºC inside a basket.  Drill a 3mm hole in a no hole basket. Thread a K type temperature bead through. Bend the wire. Run this profile twice to warm up the basket and portafilter. When the DE1 stabilizes at 90ºC, if the meter is not 90.0ºC then go to Settings->Machine->Calibrate and enter the temperature on your meter.  Press Enter, then Done, then Ok. Run the profile. Repeat until the DE1 is within 0.3ºC of the meter.",
+  "beverage_type": "calibrate",
+  "steps": [
+    {
+      "name": "preinfusion",
+      "temperature": "90.0",
+      "sensor": "coffee",
+      "pump": "flow",
+      "transition": "fast",
+      "pressure": "1",
+      "flow": "4.5",
+      "seconds": "0",
+      "volume": "100",
+      "exit": {
+        "type": "pressure",
+        "condition": "over",
+        "value": "4.0"
+      }
+    },
+    {
+      "name": "hold",
+      "temperature": "90.0",
+      "sensor": "coffee",
+      "pump": "flow",
+      "transition": "fast",
+      "pressure": "",
+      "flow": "4.0",
+      "seconds": "60",
+      "volume": "100"
+    },
+    {
+      "name": "decline",
+      "temperature": "90.0",
+      "sensor": "coffee",
+      "pump": "flow",
+      "transition": "smooth",
+      "pressure": "",
+      "flow": "1",
+      "seconds": "0",
+      "volume": "100"
+    }
+  ],
+  "tank_temperature": "0",
+  "target_weight": "36",
+  "target_volume": "0",
+  "target_volume_count_start": "2",
+  "legacy_profile_type": "settings_2b",
+  "type": "flow",
+  "lang": "en",
+  "hidden": "1",
+  "reference_file": "",
+  "changes_since_last_espresso": "",
+  "version": "2"
+}
