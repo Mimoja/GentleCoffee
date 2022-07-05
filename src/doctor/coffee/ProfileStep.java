@@ -2,10 +2,10 @@ package doctor.coffee;
 
 import java.util.ArrayList;
 
-public abstract class ProfileStep {
+public abstract class ProfileStep< T extends ProfileStep.ProfileStepExitCondition> {
     private String name;
     private String description;
-    private ArrayList<ProfileStepExitCondition> exitConditions;
+    private ArrayList<T> exitConditions;
 
     public String getName() {
         return name;
@@ -23,17 +23,17 @@ public abstract class ProfileStep {
         this.description = description;
     }
 
-    public ArrayList<ProfileStepExitCondition> getExitConditions() {
+    public ArrayList<T> getExitConditions() {
         return exitConditions;
     }
 
-    public void setExitConditions(ArrayList<ProfileStepExitCondition> exitConditions) {
+    public void setExitConditions(ArrayList<T> exitConditions) {
         this.exitConditions = exitConditions;
     }
 
-    public interface ProfileStepExitCondition {
-        public String getName();
+    public abstract class ProfileStepExitCondition {
+        public abstract String getName();
 
-        public String getDescription();
+        public abstract String getDescription();
     }
 }

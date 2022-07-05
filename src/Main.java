@@ -24,7 +24,7 @@ public class Main {
         }
         System.out.println("title is " + profile.title);
 
-        profile.changeParameter(new ChangeCommand("title", "hahahahaha"));
+        profile.changeParameter(new ChangeCommand<String>("title", "hahahahaha"));
 
         System.out.println("title is " + profile.title);
         System.out.println("Undoing last change");

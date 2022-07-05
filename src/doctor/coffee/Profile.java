@@ -3,7 +3,7 @@ package doctor.coffee;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Profile {
+public abstract class Profile<T extends ProfileStep> {
 
     public String title;
     public String author;
@@ -13,6 +13,16 @@ public abstract class Profile {
     public Float inputWeight;
     private ArrayList<ChangeCommand> changeList;
     private Integer undoDepth;
+
+    private List<T> steps;
+    public List<T> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(List<T> steps) {
+        this.steps = steps;
+    }
+
 
     public Profile() {
         changeList = new ArrayList<>();
@@ -35,10 +45,6 @@ public abstract class Profile {
         profile.copyParametersFromProfile(old);
         return profile;
     }
-
-    public abstract List<ProfileStep> getSteps();
-
-    public abstract void setSteps(List<ProfileStep> steps);
 
     public void changeParameter(ChangeCommand command) {
         // No chance to redo from here
@@ -71,6 +77,9 @@ public abstract class Profile {
             case "inputWeight":
                 this.inputWeight = (Float) command.getValue();
                 break;
+            case "steps":
+                this.steps = (ArrayList<T>) command.getValue();
+                break;
             default:
                 processChangeCommand(command);
                 break;
@@ -91,6 +100,7 @@ public abstract class Profile {
         this.type = newProfile.type;
         this.targetBrewWeight = newProfile.targetBrewWeight;
         this.inputWeight = newProfile.inputWeight;
+        this.steps = newProfile.steps;
     }
 
     public void undo() {

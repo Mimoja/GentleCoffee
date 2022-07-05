@@ -1,13 +1,13 @@
 package doctor.coffee;
 
-public class ChangeCommand {
+public class ChangeCommand<T> {
     private String parameter_name;
-    private Object parameter_value;
+    private T parameter_value;
 
     private Profile before;
     private Profile after;
 
-    public ChangeCommand(String name, Object value) {
+    public ChangeCommand(String name, T value) {
         parameter_name = name;
         parameter_value = value;
     }
@@ -16,7 +16,7 @@ public class ChangeCommand {
         return parameter_name;
     }
 
-    public Object getValue() {
+    public T getValue() {
         return parameter_value;
     }
 
