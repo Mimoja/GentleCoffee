@@ -1,15 +1,9 @@
 package doctor.coffee;
 
-import doctor.coffee.decent.DecentProfile;
-
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Profile {
-
-    private ArrayList<ChangeCommand> changeList;
-    private Integer undoDepth;
 
     public String title;
     public String author;
@@ -17,13 +11,19 @@ public abstract class Profile {
     public ProfileType type;
     public Float targetBrewWeight;
     public Float inputWeight;
+    private ArrayList<ChangeCommand> changeList;
+    private Integer undoDepth;
 
-    public Profile(){
+    public Profile() {
         changeList = new ArrayList<>();
         undoDepth = 0;
     }
 
-    public Profile fromProfile(Profile old){
+    static Profile fromString() {
+        return null;
+    }
+
+    public Profile fromProfile(Profile old) {
         Profile profile = null;
         try {
             profile = old.getClass().getConstructor().newInstance();
@@ -36,23 +36,19 @@ public abstract class Profile {
         return profile;
     }
 
-    static Profile fromString() {
-        return null;
-    }
-
     public abstract List<ProfileStep> getSteps();
 
     public abstract void setSteps(List<ProfileStep> steps);
 
     public void changeParameter(ChangeCommand command) {
         // No chance to redo from here
-        if(undoDepth > 0) {
+        if (undoDepth > 0) {
             int size = changeList.size();
-            changeList.subList(size-undoDepth, size).clear();
+            changeList.subList(size - undoDepth, size).clear();
             undoDepth = 0;
         }
 
-        System.out.println("Changing param "+ command.getName());
+        System.out.println("Changing param " + command.getName());
 
         command.setBefore(fromProfile(this));
 
@@ -61,7 +57,7 @@ public abstract class Profile {
                 this.title = (String) command.getValue();
                 break;
             case "author":
-                this.author = (String)  command.getValue();
+                this.author = (String) command.getValue();
                 break;
             case "notes":
                 this.notes = (String) command.getValue();
@@ -85,8 +81,10 @@ public abstract class Profile {
     }
 
     protected abstract void processChangeCommand(ChangeCommand command);
+
     public abstract void copyParametersFromProfile(Profile newProfile);
-    public void copyGenericParametersFromProfile(Profile newProfile){
+
+    public void copyGenericParametersFromProfile(Profile newProfile) {
         this.title = newProfile.title;
         this.author = newProfile.author;
         this.notes = newProfile.notes;
@@ -96,7 +94,7 @@ public abstract class Profile {
     }
 
     public void undo() {
-        if(changeList.isEmpty())
+        if (changeList.isEmpty())
             return;
 
         int size = changeList.size();
@@ -107,7 +105,7 @@ public abstract class Profile {
     }
 
     public void redo() {
-        if(undoDepth == 0) {
+        if (undoDepth == 0) {
             return;
         }
         undoDepth--;

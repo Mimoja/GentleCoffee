@@ -3,11 +3,6 @@ package doctor.coffee;
 import java.util.ArrayList;
 
 public abstract class ProfileStep {
-    public interface ProfileStepExitCondition {
-        public String getName();
-        public String getDescription();
-    }
-
     private String name;
     private String description;
     private ArrayList<ProfileStepExitCondition> exitConditions;
@@ -34,5 +29,11 @@ public abstract class ProfileStep {
 
     public void setExitConditions(ArrayList<ProfileStepExitCondition> exitConditions) {
         this.exitConditions = exitConditions;
+    }
+
+    public interface ProfileStepExitCondition {
+        public String getName();
+
+        public String getDescription();
     }
 }

@@ -14,14 +14,12 @@ public class Main {
         Profile profile = null;
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        try  {
+        try {
             byte[] bytes = Files.readAllBytes(filePath);
-            String fileContent = new String (bytes);
+            String fileContent = new String(bytes);
 
             profile = DecentProfile.fromString(fileContent);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println("title is " + profile.title);
