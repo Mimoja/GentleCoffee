@@ -1,9 +1,9 @@
-package doctor.coffee.decent;
+package gentlecoffee.doctor.coffee.decent;
 
 import com.google.gson.Gson;
-import doctor.coffee.ChangeCommand;
-import doctor.coffee.Profile;
-import doctor.coffee.ProfileStep;
+import gentlecoffee.doctor.coffee.ChangeCommand;
+import gentlecoffee.doctor.coffee.Profile;
+import gentlecoffee.doctor.coffee.ProfileStep;
 
 public class DecentProfile extends Profile<DecentProfile.DecentProfileStep> {
     public String tank_temperature;

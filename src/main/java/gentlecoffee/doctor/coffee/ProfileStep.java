@@ -1,4 +1,4 @@
-package doctor.coffee;
+package gentlecoffee.doctor.coffee;
 
 import java.util.ArrayList;
 

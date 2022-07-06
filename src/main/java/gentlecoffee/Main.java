@@ -2,9 +2,9 @@ package gentlecoffee;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import doctor.coffee.ChangeCommand;
-import doctor.coffee.Profile;
-import doctor.coffee.decent.DecentProfile;
+import gentlecoffee.doctor.coffee.ChangeCommand;
+import gentlecoffee.doctor.coffee.Profile;
+import gentlecoffee.doctor.coffee.decent.DecentProfile;
 
 import java.io.IOException;
 import java.nio.file.Files;

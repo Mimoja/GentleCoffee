@@ -17,8 +17,8 @@ application {
   mainClass = 'gentlecoffee.Main'
 }
 
-sourceCompatibility = 11
-targetCompatibility = 11
+sourceCompatibility = 16
+targetCompatibility = 18
 
 
 tasks.named('test') {
