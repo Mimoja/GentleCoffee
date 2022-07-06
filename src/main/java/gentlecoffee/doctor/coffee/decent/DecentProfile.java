@@ -1,11 +1,13 @@
-package doctor.coffee.decent;
+package gentlecoffee.doctor.coffee.decent;
 
 import com.google.gson.Gson;
-import doctor.coffee.ChangeCommand;
-import doctor.coffee.Profile;
-import doctor.coffee.ProfileStep;
+import gentlecoffee.doctor.coffee.ChangeCommand;
+import gentlecoffee.doctor.coffee.Profile;
+import gentlecoffee.doctor.coffee.ProfileStep;
 
-public class DecentProfile extends Profile<DecentProfile.DecentProfileStep> {
+import java.util.List;
+
+public class DecentProfile extends Profile<DecentProfile.DecentProfileStep>  {
     public String tank_temperature;
     public String target_volume_count_start;
 
@@ -18,7 +20,17 @@ public class DecentProfile extends Profile<DecentProfile.DecentProfileStep> {
 
     @Override
     protected void processChangeCommand(ChangeCommand command) {
-
+        switch (command.getName()) {
+            case "tank_temperature":
+                this.tank_temperature = (String) command.getValue();
+                break;
+            case "target_volume_count_start":
+                this.target_volume_count_start = (String) command.getValue();
+                break;
+            default:
+                //TODO error
+                break;
+        }
     }
 
     @Override
@@ -30,6 +42,7 @@ public class DecentProfile extends Profile<DecentProfile.DecentProfileStep> {
         this.tank_temperature = decentProfile.tank_temperature;
         this.target_volume_count_start = decentProfile.target_volume_count_start;
     }
+
 
     public class ExitCondition {
         public String type;

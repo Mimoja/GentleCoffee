@@ -1,4 +1,4 @@
-package doctor.coffee;
+package gentlecoffee.doctor.coffee;
 
 public class ChangeCommand<T> {
     private String parameter_name;

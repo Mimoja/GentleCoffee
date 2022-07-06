@@ -2,9 +2,11 @@ package gentlecoffee;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import doctor.coffee.ChangeCommand;
-import doctor.coffee.Profile;
-import doctor.coffee.decent.DecentProfile;
+import gentlecoffee.doctor.coffee.ChangeCommand;
+import gentlecoffee.doctor.coffee.Profile;
+import gentlecoffee.doctor.coffee.decent.DecentProfile;
+import gentlecoffee.doctor.coffee.decent.binary.FirmwareHeader;
+
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -37,6 +39,10 @@ public class Main {
 
         profile.redo();
         System.out.println("title is " + profile.title);
+
+        FirmwareHeader header = new FirmwareHeader();
+        header.Version.set(0x11223344);
+        System.out.println(header);
     }
 
 }
