@@ -5,13 +5,8 @@ import java.util.List;
 
 public abstract class Profile<T extends ProfileStep> {
 
-    public String title;
-    public String author;
-    public String notes;
-    public ProfileType type;
-    public Float targetBrewWeight;
-    public Float inputWeight;
-    private ArrayList<ChangeCommand> changeList;
+    public ProfileData data;
+    private ArrayList<DataChangeCommand<ProfileData>> changeList;
     private Integer undoDepth;
 
     private List<T> steps;
@@ -25,6 +20,7 @@ public abstract class Profile<T extends ProfileStep> {
 
 
     public Profile() {
+        data = new ProfileData();
         changeList = new ArrayList<>();
         undoDepth = 0;
     }
@@ -41,12 +37,12 @@ public abstract class Profile<T extends ProfileStep> {
             throw new RuntimeException(e);
         }
 
-        profile.copyGenericParametersFromProfile(old);
+        profile.data = old.data;
         profile.copyParametersFromProfile(old);
         return profile;
     }
 
-    public void changeParameter(ChangeCommand command) {
+    public void changeParameter(DataChangeCommand<ProfileData> command) {
         // No chance to redo from here
         if (undoDepth > 0) {
             int size = changeList.size();
@@ -54,37 +50,9 @@ public abstract class Profile<T extends ProfileStep> {
             undoDepth = 0;
         }
 
-        System.out.println("Changing param " + command.getName());
-
-        command.setBefore(fromProfile(this));
-
-        switch (command.getName()) {
-            case "title":
-                this.title = (String) command.getValue();
-                break;
-            case "author":
-                this.author = (String) command.getValue();
-                break;
-            case "notes":
-                this.notes = (String) command.getValue();
-                break;
-            case "type":
-                this.type = (ProfileType) command.getValue();
-                break;
-            case "targetBrewWeight":
-                this.targetBrewWeight = (Float) command.getValue();
-                break;
-            case "inputWeight":
-                this.inputWeight = (Float) command.getValue();
-                break;
-            case "steps":
-                this.steps = (ArrayList<T>) command.getValue();
-                break;
-            default:
-                processChangeCommand(command);
-                break;
-        }
-        command.setAfter(fromProfile(this));
+        command.setBefore(data);
+        this.data = command.execute(this.data);
+        command.setAfter(data);
 
         changeList.add(command);
     }
@@ -93,24 +61,14 @@ public abstract class Profile<T extends ProfileStep> {
 
     public abstract void copyParametersFromProfile(Profile newProfile);
 
-    public void copyGenericParametersFromProfile(Profile newProfile) {
-        this.title = newProfile.title;
-        this.author = newProfile.author;
-        this.notes = newProfile.notes;
-        this.type = newProfile.type;
-        this.targetBrewWeight = newProfile.targetBrewWeight;
-        this.inputWeight = newProfile.inputWeight;
-        this.steps = newProfile.steps;
-    }
-
     public void undo() {
         if (changeList.isEmpty())
             return;
 
         int size = changeList.size();
-        ChangeCommand changeCommand = changeList.get(size - 1 - undoDepth);
-        copyGenericParametersFromProfile(changeCommand.getBefore());
-        copyParametersFromProfile(changeCommand.getBefore());
+        DataChangeCommand<ProfileData> changeCommand = changeList.get(size - 1 - undoDepth);
+        this.data = changeCommand.getBefore();
+        // copyParametersFromProfile(changeCommand.getBefore());
         undoDepth++;
     }
 
@@ -120,8 +78,8 @@ public abstract class Profile<T extends ProfileStep> {
         }
         undoDepth--;
         int size = changeList.size();
-        ChangeCommand changeCommand = changeList.get(size - 1 - undoDepth);
-        copyGenericParametersFromProfile(changeCommand.getAfter());
-        copyParametersFromProfile(changeCommand.getAfter());
+        DataChangeCommand<ProfileData> changeCommand = changeList.get(size - 1 - undoDepth);
+        this.data = changeCommand.getAfter();
+        // copyParametersFromProfile(changeCommand.getAfter());
     }
 }
