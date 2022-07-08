@@ -49,4 +49,8 @@ public final class FirmwareHeader extends Struct {
 
         this.HSum.set(HSum);
     }
+    @Override
+    public boolean isPacked() {
+        return true;
+    }
 }

@@ -22,26 +22,36 @@ public enum MachineSubStates {
     PausedSteam,      // 18 Are we paused in steam?
     UserNotPresent,   // 19 Tell the tablet we think the user is not present
     SteamPuff,        // 20 Steaming in puff mode
-}
-/*
-public enum APIErrorSubStates {
+
     // Error states
-    Error_NaN=200        // Something died with a NaN
-    Error_Inf=201,        // Something died with an Inf
-    Error_Generic=202,    // An error for which we have no more specific description
-    Error_ACC=203,        // ACC not responding, unlocked, or incorrectly programmed
-    Error_TSensor=204,    // We are getting an error that is probably a broken temperature sensor
-    Error_PSensor=205,    // Pressure sensor error
-    Error_WLevel=206,     // Water level sensor error
-    Error_DIP=207,        // DIP switches told us to wait in the error state.
-    Error_Assertion=208,  // Assertion failed
-    Error_Unsafe=209,     // Unsafe value assigned to variable
-    Error_InvalidParm=210,// Invalid parameter passed to function
-    Error_Flash=211,      // Error accessing external flash
-    Error_OOM=212,        // Could not allocate memory
-    Error_Deadline=213,   // Realtime deadline missed
-    Error_HiCurrent=214,  // Measured a current that is out of bounds.
-    Error_LoCurrent=215,  // Not enough current flowing, despite something being turned on.
-    Error_BootFill=216    // Could not get up to pressure during boot pressure test, possibly because no water
+    Error_NaN(200),        // Something died with a NaN
+    Error_Inf(201),        // Something died with an Inf
+    Error_Generic(202),    // An error for which we have no more specific description
+    Error_ACC(203),        // ACC not responding, unlocked, or incorrectly programmed
+    Error_TSensor(204),    // We are getting an error that is probably a broken temperature sensor
+    Error_PSensor(205),    // Pressure sensor error
+    Error_WLevel(206),     // Water level sensor error
+    Error_DIP(207),        // DIP switches told us to wait in the error state.
+    Error_Assertion(208),  // Assertion failed
+    Error_Unsafe(209),     // Unsafe value assigned to variable
+    Error_InvalidParm(210),// Invalid parameter passed to function
+    Error_Flash(211),      // Error accessing external flash
+    Error_OOM(212),        // Could not allocate memory
+    Error_Deadline(213),   // Realtime deadline missed
+    Error_HiCurrent(214),  // Measured a current that is out of bounds.
+    Error_LoCurrent(215),  // Not enough current flowing, despite something being turned on.
+    Error_BootFill(216);   // Could not get up to pressure during boot pressure test, possibly because no water
+
+    private int numVal;
+
+    MachineSubStates(int numVal) {
+        this.numVal = numVal;
+    }
+
+    MachineSubStates(){
+        this.numVal = this.ordinal();
+    }
+    public int val() {
+        return numVal;
+    }
 }
-*/
