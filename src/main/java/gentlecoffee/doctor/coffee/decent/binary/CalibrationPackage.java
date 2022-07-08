@@ -81,5 +81,8 @@ public class CalibrationPackage extends Struct {
         }
     }
 
-
+    @Override
+    public boolean isPacked() {
+        return true;
+    }
 }
