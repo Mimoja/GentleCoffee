@@ -27,13 +27,7 @@ public class ShotFrame extends Struct {
     }
 
     public ShotFrame(byte frameIndex, ShotFrameFlag flag, short targetVal, float temperature, float seconds, short triggerVal, short maxVolume) {
-        FrameToWrite = new Unsigned8();
-        Flag = new Unsigned8();
-        SetVal = inner(new Unsigned8P4());
-        Temp = inner(new Unsigned8P1());
-        FrameLen = inner(new Float8_1P7());
-        TriggerVal = inner(new Unsigned8P4());
-        MaxVol = inner(new Unsigned10P0());
+        this();
 
         FrameToWrite.set(frameIndex);
         Flag.set(flag.val());

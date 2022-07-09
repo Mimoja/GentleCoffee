@@ -12,8 +12,8 @@ public class StateInfo extends Struct {
     }
 
     public StateInfo(MachineStates state, MachineSubStates subState) {
-        this.state = new Enum8<MachineStates>(MachineStates.values());
-        this.subState = new Unsigned8();
+        this();
+
         this.state.set(state);
         this.subState.set((short) subState.val());
     }

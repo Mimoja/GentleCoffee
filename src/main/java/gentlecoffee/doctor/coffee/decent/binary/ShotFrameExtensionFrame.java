@@ -26,10 +26,7 @@ public final class ShotFrameExtensionFrame extends Struct {
     }
 
     public ShotFrameExtensionFrame(byte frameIndex, short maxFlowOrPressure, short maxFoPRange) {
-        FrameToWrite = new Unsigned8();
-        MaxFlowOrPressure = inner(new Unsigned8P4());
-        MaxFoPRange = inner(new Unsigned8P4());
-        Unused = array(new Unsigned8[5]);
+        this();
 
         FrameToWrite.set(frameIndex);
         MaxFlowOrPressure.set(maxFlowOrPressure );

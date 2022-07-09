@@ -22,11 +22,7 @@ public final class ShotFrameTail extends Struct {
     }
 
     public ShotFrameTail(byte frameIndex, boolean ignorePreinfusionVolume, int maxTotalVolume) {
-        FrameToWrite = new Unsigned8();
-        IgnorePreinfusionVolume = new BitField(1);
-        Padding = new BitField(5);
-        MaxTotalVolume = new BitField(10);
-        Unused = array(new Unsigned8[5]);
+        this();
 
         FrameToWrite.set(frameIndex);
         IgnorePreinfusionVolume.set((short) (ignorePreinfusionVolume ? 0x1 : 0x0));

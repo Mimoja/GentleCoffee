@@ -26,15 +26,7 @@ public final class FirmwareHeader extends Struct {
     }
 
     public FirmwareHeader(long checkSum, long boardMarker, long version, long byteCount, long CPUBytes, long unused, long DCSum, short IV[], long HSum) {
-        this.CheckSum = new Unsigned32();
-        this.BoardMarker = new Unsigned32();
-        this.Version = new Unsigned32();
-        this.ByteCount = new Unsigned32();
-        this.CPUBytes = new Unsigned32();
-        this.Unused = new Unsigned32();
-        this.DCSum = new Unsigned32();
-        this.IV = array(new Unsigned8[32]);
-        this.HSum = new Unsigned32();
+        this();
 
         this.CheckSum.set(checkSum);
         this.BoardMarker.set(boardMarker);

@@ -61,7 +61,7 @@ package gentlecoffee.doctor.coffee.decent.binary.MMR;
  */
 public enum MMRRegions {
 
-    ExternalFlash(0x0000, 0x0000, 0x00F),       //!< ExternalFlash
+    ExternalFlash(0x0000, 0x0000, 0x000FFFFF),       //!< ExternalFlash
     HWConfig(0x0000),            //!< HWConfig
     Model(0x0004),            //!< Model
     DebugLen(0x2800),            //!< DebugLen
@@ -88,7 +88,6 @@ public enum MMRRegions {
     FlushTemp(0x3844, ValueDeviders.DEV_10), //!<FlushFlowRate
     FlushTimeout(0x3848, ValueDeviders.DEV_10), //!<FlushFlowRate
     HotWaterFlowRate(0x384C, ValueDeviders.DEV_10), //!<FlushFlowRate
-
     SteamPurgeMode(0x3850), //!<SteamPurgeMode
     AllowUSBCharging(0x3854), //!<AllowUSBCharging
 
