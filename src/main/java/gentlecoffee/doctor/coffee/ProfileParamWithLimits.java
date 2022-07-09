@@ -1,7 +1,10 @@
 package gentlecoffee.doctor.coffee;
 
+import static java.lang.Math.random;
+
 // This needs a better name
 public class ProfileParamWithLimits<T> implements Cloneable {
+    private Integer _id;
     private final String name;
     private T value;
     private T min;
@@ -16,15 +19,11 @@ public class ProfileParamWithLimits<T> implements Cloneable {
         this.max = max;
         this.increment = increment;
         this.description = description;
+        this._id = (int) (name.hashCode() * random());
     }
 
     public ProfileParamWithLimits(String name, T value, String description) {
-        this.name = name;
-        this.value = value;
-        this.min = null;
-        this.max = null;
-        this.increment = null;
-        this.description = description;
+        this(name, value, null, null, null, description);
     }
     @Override
     public Object clone()
@@ -72,6 +71,6 @@ public class ProfileParamWithLimits<T> implements Cloneable {
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        return _id;
     }
 }
