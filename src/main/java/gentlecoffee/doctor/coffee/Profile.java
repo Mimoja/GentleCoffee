@@ -1,49 +1,65 @@
 package gentlecoffee.doctor.coffee;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Profile<T extends ProfileStep> {
-
-    public String title;
-    public String author;
-    public String notes;
-    public ProfileType type;
-    public Float targetBrewWeight;
-    public Float inputWeight;
+    public Integer TITLE;
+    public Integer AUTHOR;
+    public Integer NOTES;
+    public Integer TYPE;
+    public Integer OUTPUT_WEIGHT;
+    public Integer INPUT_WEIGHT;
+    public ProfileList profileVars = new ProfileList();
     private ArrayList<ChangeCommand> changeList;
     private Integer undoDepth;
 
-    private List<T> steps;
-    public List<T> getSteps() {
-        return steps;
-    }
-
-    public void setSteps(List<T> steps) {
-        this.steps = steps;
-    }
-
-
-    public Profile() {
+    public Profile(String title, String author, String notes, ProfileType type, float targetBrewWeight, float inputWeight) {
         changeList = new ArrayList<>();
         undoDepth = 0;
+
+        this.TITLE = registerParam(new ProfileParamWithLimits<>(
+                "Title",
+                title, "The title of the profile")
+        );
+
+        this.AUTHOR = registerParam(new ProfileParamWithLimits<>(
+                "Author",
+                author, "The author of the profile")
+        );
+
+        this.NOTES = registerParam(new ProfileParamWithLimits<>(
+                "Notes",
+                notes, "The description or tasting notes of the profile")
+        );
+
+        this.TYPE = registerParam(new ProfileParamWithLimits<>(
+                "Beverage Type",
+                type, "The type of the profile (e.g. Espresso, Pourover, Tea)")
+        );
+
+        this.AUTHOR = registerParam(new ProfileParamWithLimits<>(
+                "Author",
+                author, "The author of the profile")
+        );
+
+        this.OUTPUT_WEIGHT = registerParam(new ProfileParamWithLimits<>(
+                "Output Weight",
+                targetBrewWeight, 0.0f, null, 0.1f, "The output of the brew in gramm")
+        );
+
+        this.INPUT_WEIGHT = registerParam(new ProfileParamWithLimits<>(
+                "Input Weight",
+                inputWeight, 0.0f, 100.0f, 0.1f, "The input of the brew in gramm")
+        );
     }
 
-    static Profile fromString() {
-        return null;
+    public List<ProfileParamWithLimits> getVars() {
+        return (List<ProfileParamWithLimits>) profileVars.clone();
     }
 
-    public Profile fromProfile(Profile old) {
-        Profile profile = null;
-        try {
-            profile = old.getClass().getConstructor().newInstance();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        profile.copyGenericParametersFromProfile(old);
-        profile.copyParametersFromProfile(old);
-        return profile;
+    protected int registerParam(ProfileParamWithLimits param) {
+        profileVars.add(param);
+        return param.hashCode();
     }
 
     public void changeParameter(ChangeCommand command) {
@@ -53,54 +69,32 @@ public abstract class Profile<T extends ProfileStep> {
             changeList.subList(size - undoDepth, size).clear();
             undoDepth = 0;
         }
+        ProfileParamWithLimits parameter = command.getParameter();
 
-        System.out.println("Changing param " + command.getName());
+        System.out.println("Changing param " + parameter.getName());
 
-        command.setBefore(fromProfile(this));
+        command.setBefore((List<ProfileParamWithLimits>) profileVars.clone());
 
-        switch (command.getName()) {
-            case "title":
-                this.title = (String) command.getValue();
-                break;
-            case "author":
-                this.author = (String) command.getValue();
-                break;
-            case "notes":
-                this.notes = (String) command.getValue();
-                break;
-            case "type":
-                this.type = (ProfileType) command.getValue();
-                break;
-            case "targetBrewWeight":
-                this.targetBrewWeight = (Float) command.getValue();
-                break;
-            case "inputWeight":
-                this.inputWeight = (Float) command.getValue();
-                break;
-            case "steps":
-                this.steps = (ArrayList<T>) command.getValue();
-                break;
-            default:
-                processChangeCommand(command);
-                break;
+        for (int i = 0; i < profileVars.size(); i++) {
+            ProfileParamWithLimits var = profileVars.get(i);
+            if (var.hashCode() == parameter.hashCode()) {
+                var.setValue(parameter.getValue());
+            }
         }
-        command.setAfter(fromProfile(this));
+
+        command.setAfter((List<ProfileParamWithLimits>) profileVars.clone());
 
         changeList.add(command);
     }
 
-    protected abstract void processChangeCommand(ChangeCommand command);
-
-    public abstract void copyParametersFromProfile(Profile newProfile);
-
-    public void copyGenericParametersFromProfile(Profile newProfile) {
-        this.title = newProfile.title;
-        this.author = newProfile.author;
-        this.notes = newProfile.notes;
-        this.type = newProfile.type;
-        this.targetBrewWeight = newProfile.targetBrewWeight;
-        this.inputWeight = newProfile.inputWeight;
-        this.steps = newProfile.steps;
+    public ProfileParamWithLimits getParameterFromHashCode(Integer hashCode) {
+        for (int i = 0; i < profileVars.size(); i++) {
+            ProfileParamWithLimits var = profileVars.get(i);
+            if (var.hashCode() == hashCode) {
+                return (ProfileParamWithLimits) var.clone();
+            }
+        }
+        return null;
     }
 
     public void undo() {
@@ -109,8 +103,7 @@ public abstract class Profile<T extends ProfileStep> {
 
         int size = changeList.size();
         ChangeCommand changeCommand = changeList.get(size - 1 - undoDepth);
-        copyGenericParametersFromProfile(changeCommand.getBefore());
-        copyParametersFromProfile(changeCommand.getBefore());
+        profileVars = (ProfileList) ((ProfileList) changeCommand.getBefore()).clone();
         undoDepth++;
     }
 
@@ -121,7 +114,17 @@ public abstract class Profile<T extends ProfileStep> {
         undoDepth--;
         int size = changeList.size();
         ChangeCommand changeCommand = changeList.get(size - 1 - undoDepth);
-        copyGenericParametersFromProfile(changeCommand.getAfter());
-        copyParametersFromProfile(changeCommand.getAfter());
+        profileVars = (ProfileList) ((ProfileList) changeCommand.getAfter()).clone();
+    }
+
+    class ProfileList extends LinkedList<ProfileParamWithLimits> {
+        public ProfileList clone() {
+            ProfileList l = new ProfileList();
+
+            for (ProfileParamWithLimits item : this) {
+                l.add((ProfileParamWithLimits) item.clone());
+            }
+            return l;
+        }
     }
 }

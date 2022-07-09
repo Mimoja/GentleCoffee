@@ -1,38 +1,33 @@
 package gentlecoffee.doctor.coffee;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class ChangeCommand<T> {
-    private String parameter_name;
-    private T parameter_value;
-
-    private Profile before;
-    private Profile after;
-
-    public ChangeCommand(String name, T value) {
-        parameter_name = name;
-        parameter_value = value;
+    private List<ProfileParamWithLimits> before;
+    private List<ProfileParamWithLimits> after;
+    private ProfileParamWithLimits parameter_value;
+    public ChangeCommand(ProfileParamWithLimits parameter_value) {
+        this.parameter_value = parameter_value;
     }
 
-    public String getName() {
-        return parameter_name;
-    }
-
-    public T getValue() {
+    public ProfileParamWithLimits getParameter() {
         return parameter_value;
     }
-
-    public Profile getBefore() {
+    public List<ProfileParamWithLimits> getBefore() {
         return before;
     }
 
-    public void setBefore(Profile before) {
+    public void setBefore(List<ProfileParamWithLimits> before) {
         this.before = before;
     }
 
-    public Profile getAfter() {
+    public List<ProfileParamWithLimits> getAfter() {
         return after;
     }
 
-    public void setAfter(Profile after) {
+    public void setAfter(List<ProfileParamWithLimits> after) {
         this.after = after;
     }
+
 }

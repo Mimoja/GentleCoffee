@@ -1,7 +1,7 @@
 package gentlecoffee.doctor.coffee;
 
 // This needs a better name
-public class ProfileParamLimits<T> {
+public class ProfileParamWithLimits<T> implements Cloneable {
     private final String name;
     private T value;
     private T min;
@@ -9,7 +9,7 @@ public class ProfileParamLimits<T> {
     private T increment;
     private String description;
 
-    public ProfileParamLimits(String name, T value, T min, T max, T increment, String description) {
+    public ProfileParamWithLimits(String name, T value, T min, T max, T increment, String description) {
         this.name = name;
         this.value = value;
         this.min = min;
@@ -18,13 +18,22 @@ public class ProfileParamLimits<T> {
         this.description = description;
     }
 
-    public ProfileParamLimits(String name, T value, String description) {
+    public ProfileParamWithLimits(String name, T value, String description) {
         this.name = name;
         this.value = value;
         this.min = null;
         this.max = null;
         this.increment = null;
         this.description = description;
+    }
+    @Override
+    public Object clone()
+    {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public T getValue() {
@@ -54,5 +63,15 @@ public class ProfileParamLimits<T> {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 }

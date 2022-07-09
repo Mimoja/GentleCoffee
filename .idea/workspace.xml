@@ -5,32 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e333ad8f-874c-4791-af1c-1703439609ad" name="Changes" comment="Tralalalalala. Ich back mir nen Cacao">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/DecentPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/FirmwareHeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/MachineStates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/MachineSubStates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/ShotDescHeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/StateInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/ProfileParamWithLimits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GentleCoffee.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/gson-2.9.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/ChangeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/ChangeCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/ProfileStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/ProfileStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/ProfileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/ProfileType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/DecentProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/DecentProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/FirmwareHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/FirmwareHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/MMR/MMRRegions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/MMR/MMRRegions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/ShotFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/ShotFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/ShotFrameExtensionFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/ShotFrameExtensionFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/ShotFrameTail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/ShotFrameTail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/StateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/StateInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,32 +76,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/mimoja/Projects/GentleCoffee",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mimoja/Projects/GentleCoffee/res&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="gentlecoffee.doctor.coffee.decent.binary.decentTypes" />
+      <recent name="gentlecoffee.doctor.coffee.decent.binary" />
       <recent name="doctor.coffee" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res" />
       <recent name="$PROJECT_DIR$/res/profiles/decent" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="gentlecoffee.doctor.coffee.decent.binary.decentTypes" />
+      <recent name="gentlecoffee.doctor.coffee.decent.binary.MMR" />
       <recent name="gentlecoffee.doctor.coffee.decent.binary" />
     </key>
   </component>
@@ -195,7 +190,11 @@
       <updated>1657053196240</updated>
       <workItem from="1657053197510" duration="8053000" />
       <workItem from="1657124388852" duration="2876000" />
-      <workItem from="1657127315990" duration="4220000" />
+      <workItem from="1657127315990" duration="4514000" />
+      <workItem from="1657194937356" duration="681000" />
+      <workItem from="1657271439113" duration="22908000" />
+      <workItem from="1657317072545" duration="1511000" />
+      <workItem from="1657347834966" duration="8436000" />
     </task>
     <task id="LOCAL-00001" summary="Tralalalalala. Ich back mir nen Cacao">
       <created>1657058629928</created>
@@ -233,7 +232,22 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gentlecoffee/doctor/coffee/decent/binary/decentTypes/Unsigned8FixedPoint.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gentlecoffee/Main.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="title.hashCode()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
