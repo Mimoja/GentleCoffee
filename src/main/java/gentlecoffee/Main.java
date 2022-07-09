@@ -13,7 +13,7 @@ import java.nio.file.Path;
 public class Main {
     public static void main(String[] args) {
         Path filePath = Path.of("res/profiles/decent/Cremina.json");
-        Profile profile = new DecentProfile(
+        Profile<?> profile = new DecentProfile(
                 "default_title",
                 "default_author",
                 "notes",
@@ -24,14 +24,17 @@ public class Main {
                 3);
         System.out.println("title is " + profile.getParameterFromHashCode(profile.TITLE));
 
-        ProfileParamWithLimits title = profile.getParameterFromHashCode(profile.TITLE);
+        ProfileParamWithLimits<String> title = profile.getParameterFromHashCode(profile.TITLE);
         title.setValue("New  Title");
+
 
         profile.changeParameter(new ChangeCommand<>(title));
         System.out.println("title is " + profile.getParameterFromHashCode(profile.TITLE));
 
+
         System.out.println("\nChanging a profile from the list index");
         ProfileParamWithLimits nextParam = (ProfileParamWithLimits) profile.getVars().get(1);
+
 
         nextParam.setValue("I am the author now");
         System.out.println("author is " + profile.getParameterFromHashCode(profile.AUTHOR));
@@ -78,6 +81,10 @@ public class Main {
         calibrationPackage.DE1ReportedVal.value.set(0x7FFFFFFF);
         System.out.println(calibrationPackage);
         System.out.println(calibrationPackage.DE1ReportedVal.get());
+
+
+        // this throws a type error
+        // ProfileParamWithLimits<String> test = profile.getParameterFromHashCode(profile.TITLE);
 
     }
 
