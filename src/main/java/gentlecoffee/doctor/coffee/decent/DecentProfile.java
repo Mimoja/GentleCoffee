@@ -3,8 +3,8 @@ package gentlecoffee.doctor.coffee.decent;
 import gentlecoffee.doctor.coffee.*;
 
 public class DecentProfile extends Profile<ProfileStep>  {
-    public Integer TANK_TEMP;
-    public Integer PREINFUSION_STEPS;
+    public ProfileName<Float> TANK_TEMP;
+    public ProfileName<Integer> PREINFUSION_STEPS;
 
     public DecentProfile(String title, String author, String notes, ProfileType type, float targetBrewWeight, float inputWeight, Float tank_temperature, Integer target_volume_count_start) {
         super(title, author, notes, type, targetBrewWeight, inputWeight);

@@ -3,12 +3,12 @@ package gentlecoffee.doctor.coffee;
 import java.util.*;
 
 public abstract class Profile<T extends ProfileStep> {
-    public Integer TITLE;
-    public Integer AUTHOR;
-    public Integer NOTES;
-    public Integer TYPE;
-    public Integer OUTPUT_WEIGHT;
-    public Integer INPUT_WEIGHT;
+    public ProfileName<String> TITLE;
+    public ProfileName<String> AUTHOR;
+    public ProfileName<String> NOTES;
+    public ProfileName<ProfileType> TYPE;
+    public ProfileName<Float> OUTPUT_WEIGHT;
+    public ProfileName<Float> INPUT_WEIGHT;
     public ProfileList profileVars = new ProfileList();
     private ArrayList<ChangeCommand> changeList;
     private Integer undoDepth;
@@ -57,9 +57,9 @@ public abstract class Profile<T extends ProfileStep> {
         return (List<ProfileParamWithLimits>) profileVars.clone();
     }
 
-    protected int registerParam(ProfileParamWithLimits param) {
+    protected <MT> ProfileName<MT> registerParam(ProfileParamWithLimits<MT> param) {
         profileVars.add(param);
-        return param.hashCode();
+        return new ProfileName<MT>(param.hashCode());
     }
 
     public void changeParameter(ChangeCommand command) {
@@ -87,11 +87,11 @@ public abstract class Profile<T extends ProfileStep> {
         changeList.add(command);
     }
 
-    public ProfileParamWithLimits getParameterFromHashCode(Integer hashCode) {
+    public <MT> ProfileParamWithLimits<MT> getParameterFromHashCode(ProfileName<MT> parameter) {
         for (int i = 0; i < profileVars.size(); i++) {
-            ProfileParamWithLimits var = profileVars.get(i);
-            if (var.hashCode() == hashCode) {
-                return (ProfileParamWithLimits) var.clone();
+            ProfileParamWithLimits variable = profileVars.get(i);
+            if (variable.hashCode() == parameter.hash()) {
+                return (ProfileParamWithLimits<MT>) variable.clone();
             }
         }
         return null;
